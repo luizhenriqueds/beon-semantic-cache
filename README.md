@@ -38,6 +38,18 @@ npm run dev                   # http://localhost:3000
 npm test
 ```
 
-`POST /api/ask {query, strategy}` with `strategy` = `none | exact | semantic`. `GET /api/stats` returns hit rate and LLM calls; `DELETE /api/stats` resets caches.
+`POST /api/ask {query}` uses `CACHE_STRATEGY`. `GET /api/stats` returns hit rate and LLM calls; `DELETE /api/stats` resets caches.
 
 Semantic backend: `CACHE_BACKEND=pgvector` (local) or `upstash` (remote index: 768 dims, cosine). Hit threshold: `SIMILARITY_THRESHOLD` (default 0.85).
+
+## Demo flow
+
+A simple support chat at http://localhost:3000. The caching strategy is set by the developer in `.env`, not in the UI:
+
+| `CACHE_STRATEGY`     | Behaviour                    |
+| -------------------- | ---------------------------- |
+| `none`               | every question calls the LLM |
+| `exact`              | hit only on identical text   |
+| `semantic` (default) | hit on similar questions     |
+
+Restart `npm run dev` after changing it. Each answer shows `generated` or `cached` and its latency. Ask "How do I reset my PIN?", then "I forgot my PIN, how can I change it?".

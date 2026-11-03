@@ -29,3 +29,15 @@ npm run data:load             # load Banking77 queries + answers into postgres
 
 - `queries`: Banking77 train (10k, cache seeds) and test (3k, benchmark) with intent labels.
 - `faq`: one LLM-written answer per intent (77), committed in `data/answers.json`.
+
+## Cache
+
+```bash
+npm run cache:seed            # embed N train queries per intent into the semantic cache (default 5)
+npm run dev                   # http://localhost:3000
+npm test
+```
+
+`POST /api/ask {query, strategy}` with `strategy` = `none | exact | semantic`. `GET /api/stats` returns hit rate and LLM calls; `DELETE /api/stats` resets caches.
+
+Semantic backend: `CACHE_BACKEND=pgvector` (local) or `upstash` (remote index: 768 dims, cosine). Hit threshold: `SIMILARITY_THRESHOLD` (default 0.85).

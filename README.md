@@ -15,6 +15,8 @@ Show how a semantic cache avoids repeated LLM calls. Banking support Q&A over th
 
 Built in phases, one branch each: scaffold → data → core → ui → benchmark → deploy.
 
+Local: docker + pgvector. Remote: Supabase + Upstash Vector + Vercel, all free tiers. See [docs/deploy.md](docs/deploy.md).
+
 ## Run locally
 
 ```bash

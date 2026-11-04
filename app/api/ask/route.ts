@@ -1,6 +1,8 @@
 import { engine } from "@/lib/engine";
 import type { Strategy } from "@/lib/answer";
 
+export const maxDuration = 30;
+
 const strategies = ["none", "exact", "semantic"];
 const strategy = (process.env.CACHE_STRATEGY ?? "semantic") as Strategy;
 

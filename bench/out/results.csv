@@ -1,0 +1,4 @@
+strategy,requests,llm_calls,calls_saved,hit_rate,precision,recall,p50_ms,p95_ms,mean_ms
+none,100,100,0,0,0,0,2215.4356,5824.6787,2749.0216
+exact,100,80,0.2,0.2,1,0.2128,1830.2736,2997.3179,1676.0636
+semantic,100,3,0.97,0.97,0.8866,0.9149,392.3379,535.2581,471.0096

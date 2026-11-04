@@ -53,3 +53,16 @@ A simple support chat at http://localhost:3000. The caching strategy is set by t
 | `semantic` (default) | hit on similar questions     |
 
 Restart `npm run dev` after changing it. Each answer shows `generated` or `cached` and its latency. Ask "How do I reset my PIN?", then "I forgot my PIN, how can I change it?".
+
+## Benchmark
+
+```bash
+npm run bench           # needs GEMINI_API_KEY, seeded data (data:load); ~3 × 100 requests
+npm run bench:report    # charts (SVG + PNG) and summary.html in bench/out/
+```
+
+Compares `none`, `exact` (regular cache) and `semantic` on the same workload: unseen Banking77 test questions plus 20% verbatim repeats, with 60 of 77 intents pre-cached. Tune with `BENCH_QUERIES`, `BENCH_SEEDED_INTENTS`, `BENCH_REPEAT_RATE`.
+
+- **Precision**: share of cache hits that returned the answer for the right intent.
+- **Recall**: share of answerable requests (intent already cached) served correctly from cache.
+- **Threshold sweep**: precision/recall at 0.60–0.95, computed from similarity scores without extra LLM calls.

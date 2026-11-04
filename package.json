@@ -16,7 +16,9 @@
     "data:answers": "tsx --env-file-if-exists=.env scripts/generate-answers.ts",
     "data:load": "tsx --env-file-if-exists=.env scripts/load-data.ts",
     "cache:seed": "tsx --env-file-if-exists=.env scripts/seed-cache.ts",
-    "test": "vitest run"
+    "test": "vitest run",
+    "bench": "tsx --env-file-if-exists=.env bench/run.ts",
+    "bench:report": "tsx bench/report.ts"
   },
   "dependencies": {
     "@google/genai": "^2.32.0",
@@ -28,6 +30,7 @@
     "react-dom": "^19.3.1"
   },
   "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
     "@tailwindcss/postcss": "^4.3.4",
     "@types/node": "^22.0.0",
     "@types/pg": "^8.23.1",

@@ -1,0 +1,93 @@
+{
+  "config": {
+    "requests": 100,
+    "seededIntents": 60,
+    "totalIntents": 77,
+    "seedsPerIntent": 5,
+    "repeatRate": 0.2,
+    "threshold": 0.85,
+    "backend": "pgvector"
+  },
+  "summaries": {
+    "none": {
+      "requests": 100,
+      "llmCalls": 100,
+      "hitRate": 0,
+      "precision": 0,
+      "recall": 0,
+      "p50": 2215.4355829999986,
+      "p95": 5824.678667,
+      "mean": 2749.02160004
+    },
+    "exact": {
+      "requests": 100,
+      "llmCalls": 80,
+      "hitRate": 0.2,
+      "precision": 1,
+      "recall": 0.2127659574468085,
+      "p50": 1830.273583000002,
+      "p95": 2997.3179169999785,
+      "mean": 1676.0635549999965
+    },
+    "semantic": {
+      "requests": 100,
+      "llmCalls": 3,
+      "hitRate": 0.97,
+      "precision": 0.8865979381443299,
+      "recall": 0.9148936170212766,
+      "p50": 392.3379159999895,
+      "p95": 535.258124999993,
+      "mean": 471.0095658100012
+    }
+  },
+  "sweep": [
+    {
+      "threshold": 0.6,
+      "hitRate": 1,
+      "precision": 0.825,
+      "recall": 0.9295774647887324
+    },
+    {
+      "threshold": 0.65,
+      "hitRate": 1,
+      "precision": 0.825,
+      "recall": 0.9295774647887324
+    },
+    {
+      "threshold": 0.7,
+      "hitRate": 1,
+      "precision": 0.825,
+      "recall": 0.9295774647887324
+    },
+    {
+      "threshold": 0.75,
+      "hitRate": 1,
+      "precision": 0.825,
+      "recall": 0.9295774647887324
+    },
+    {
+      "threshold": 0.8,
+      "hitRate": 1,
+      "precision": 0.825,
+      "recall": 0.9295774647887324
+    },
+    {
+      "threshold": 0.85,
+      "hitRate": 0.9625,
+      "precision": 0.8571428571428571,
+      "recall": 0.9295774647887324
+    },
+    {
+      "threshold": 0.9,
+      "hitRate": 0.7875,
+      "precision": 0.9365079365079365,
+      "recall": 0.8309859154929577
+    },
+    {
+      "threshold": 0.95,
+      "hitRate": 0.275,
+      "precision": 1,
+      "recall": 0.30985915492957744
+    }
+  ]
+}

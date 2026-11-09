@@ -43,7 +43,7 @@ npm run bench          # optional: same benchmark against the remote stack
 | `CACHE_STRATEGY`                                        | `none`, `exact` or `semantic` |
 | `CACHE_BACKEND`                                         | `upstash`                     |
 | `UPSTASH_VECTOR_REST_URL` / `UPSTASH_VECTOR_REST_TOKEN` | from step 2                   |
-| `SIMILARITY_THRESHOLD`                                  | optional, default `0.85`      |
+| `SIMILARITY_THRESHOLD`                                  | optional, default `0.9`      |
 
 3. Deploy. Change `CACHE_STRATEGY` and redeploy to compare strategies.
 

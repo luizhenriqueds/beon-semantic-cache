@@ -42,7 +42,7 @@ npm test
 
 `POST /api/ask {query}` uses `CACHE_STRATEGY`. `GET /api/stats` returns hit rate and LLM calls; `DELETE /api/stats` resets caches.
 
-Semantic backend: `CACHE_BACKEND=pgvector` (local) or `upstash` (remote index: 768 dims, cosine). Hit threshold: `SIMILARITY_THRESHOLD` (default 0.85).
+Semantic backend: `CACHE_BACKEND=pgvector` (local) or `upstash` (remote index: 768 dims, cosine). Hit threshold: `SIMILARITY_THRESHOLD` (default 0.9).
 
 ## Demo flow
 

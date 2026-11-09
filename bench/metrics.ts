@@ -1,4 +1,4 @@
-export type Source = "llm" | "exact" | "semantic";
+export type Source = "llm" | "exact" | "semantic" | "off_topic";
 export type Rec = { intent: string; source: Source; latencyMs: number; correct: boolean };
 export type Probe = { intent: string; hitIntent: string | null; score: number };
 

@@ -1,15 +1,16 @@
 import { createAnswerer } from "./answer";
 import { createSemanticCache } from "./cache";
-import { embed, generateAnswer } from "./llm";
+import { embed, generateAnswer, isBankingQuestion } from "./llm";
 
 export const createEngine = (
-  threshold = Number(process.env.SIMILARITY_THRESHOLD ?? 0.85),
+  threshold = Number(process.env.SIMILARITY_THRESHOLD ?? 0.9),
 ) =>
   createAnswerer({
     llm: generateAnswer,
     embed,
     semantic: createSemanticCache(),
     threshold,
+    isRelevant: isBankingQuestion,
   });
 
 const g = globalThis as unknown as { engine?: ReturnType<typeof createEngine> };

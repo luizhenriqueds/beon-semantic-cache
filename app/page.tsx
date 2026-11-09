@@ -176,8 +176,12 @@ export default function Home() {
                 {m.text}
                 {m.meta && (
                   <p className="mt-1.5 text-xs text-slate-400">
-                    {m.meta.source === "llm" ? "generated" : "cached"} ·{" "}
-                    {Math.round(m.meta.latencyMs)} ms
+                    {m.meta.source === "off_topic"
+                      ? "off-topic"
+                      : m.meta.source === "llm"
+                        ? "uncached"
+                        : "cached"}{" "}
+                    · {Math.round(m.meta.latencyMs)} ms
                   </p>
                 )}
               </Bubble>
